@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/txtTrackerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tracking Network"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtTrackerBssid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:00:00:00:00:00"
+            android:textSize="12sp"
+            android:textColor="#E3F2FD"
+            android:gravity="center"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Signal Circle Visualization -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="32dp"
+        android:gravity="center">
+
+        <!-- Outer Circle (Background) -->
+        <View
+            android:id="@+id/circleOuter"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle_outer" />
+
+        <!-- Middle Circle -->
+        <View
+            android:id="@+id/circleMiddle"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle_middle" />
+
+        <!-- Inner Circle (Signal Indicator) -->
+        <View
+            android:id="@+id/circleInner"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle_inner" />
+
+        <!-- Center Content -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtRssiValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-50"
+                android:textSize="48sp"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dBm"
+                android:textSize="16sp"
+                android:textColor="#757575" />
+
+            <TextView
+                android:id="@+id/txtDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~2 meters"
+                android:textSize="18sp"
+                android:textColor="#2196F3"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/txtSignalQuality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strong Signal"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Controls -->
+    <!-- Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <!-- Vibration Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:background="#F5F5F5">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vibration Feedback"
+                android:textSize="16sp"
+                android:textColor="#212121"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchVibration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+        </LinearLayout>
+
+        <!-- Info Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Walk around to locate the source. Vibration intensity increases as you get closer."
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:padding="12dp"
+            android:gravity="center" />
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Refresh Button -->
+            <Button
+                android:id="@+id/btnRefresh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="REFRESH"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Back Button -->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BACK TO LIST"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="#757575"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    </LinearLayout>

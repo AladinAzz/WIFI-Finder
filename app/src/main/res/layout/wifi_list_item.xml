@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Warning Icon for Suspicious Networks -->
+    <TextView
+        android:id="@+id/txtWarningIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="⚠️"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <!-- WiFi Icon -->
+    <TextView
+        android:id="@+id/txtWifiIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="📶"
+        android:textSize="24sp"
+        android:gravity="center" />
+
+    <!-- Network Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginLeft="12dp">
+
+        <TextView
+            android:id="@+id/txtSsid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Network Name"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtBssid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00:00:00:00:00:00"
+            android:textSize="12sp"
+            android:textColor="#757575"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/txtSuspiciousLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUSPICIOUS HOTSPOT"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:background="#FF5722"
+            android:padding="4dp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Signal Strength -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtSignalStrength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-50"
+            android:textSize="20sp"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dBm"
+            android:textSize="10sp"
+            android:textColor="#757575" />
+    </LinearLayout>
+
+</LinearLayout>

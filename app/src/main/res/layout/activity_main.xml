@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WiFi Hotspot Detector"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtNetworkCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No networks detected"
+            android:textSize="14sp"
+            android:textColor="#E3F2FD"
+            android:gravity="center"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Scan Button -->
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="SCAN FOR NETWORKS"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:elevation="2dp" />
+
+    <!-- Status TextView -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap SCAN to detect networks"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:gravity="center"
+        android:padding="8dp" />
+
+    <!-- Networks List Label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detected Networks"
+        android:textSize="16sp"
+        android:textColor="#424242"
+        android:textStyle="bold"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="#EEEEEE" />
+
+    <!-- WiFi Networks List -->
+    <ListView
+        android:id="@+id/listViewWifi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#BDBDBD"
+        android:dividerHeight="1dp"
+        android:background="#FFFFFF" />
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/txtEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="No networks found\n\nMake sure:\n• Wi-Fi is enabled\n• Location is enabled\n• Permissions are granted"
+        android:textSize="16sp"
+        android:textColor="#9E9E9E"
+        android:gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>
