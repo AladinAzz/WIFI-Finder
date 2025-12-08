@@ -10,7 +10,7 @@
 
 ## 🎯 Overview
 
-WiFi Hotspot Detector helps authorized personnel identify and physically locate rogue WiFi networks in classrooms and secure facilities[web:57][web:60]. The app uses WiFi signal strength (RSSI) and continuous vibration feedback to guide users toward hidden hotspots.
+WiFi Hotspot Detector helps authorized personnel identify and physically locate rogue WiFi networks in classrooms and secure facilities. The app uses WiFi signal strength (RSSI) and continuous vibration feedback to guide users toward hidden hotspots.
 
 ### Key Features
 
@@ -93,12 +93,12 @@ Where: RSSI_1m = -40 dBm, n = 2.5 (indoor path loss)
 
 ## ⚠️ Disclaimer
 
-**For authorized monitoring only.** This app is intended for legitimate security purposes in controlled environments (examination halls, secure facilities)[web:57][web:60].
+**For authorized monitoring only.** This app is intended for legitimate security purposes in controlled environments (examination halls, secure facilities).
 
 - ✅ Permitted: Authorized security monitoring, network administration
 - ❌ Prohibited: Unauthorized surveillance, privacy invasion
 
-**Privacy:** This app does NOT collect, store, or transmit location data. Location permission is required by Android for WiFi scanning only[web:22][web:49].
+**Privacy:** This app does NOT collect, store, or transmit location data. Location permission is required by Android for WiFi scanning only.
 
 Users must comply with local laws and regulations. Use at your own risk.
 
