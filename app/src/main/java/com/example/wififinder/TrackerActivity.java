@@ -29,7 +29,7 @@ import java.util.List;
 public class TrackerActivity extends AppCompatActivity {
 
     private static final String TAG = "TrackerActivity";
-    private static final long RSSI_UPDATE_INTERVAL = 500; // Update every 0.5 seconds
+    private static final long RSSI_UPDATE_INTERVAL = 500;
 
     private WifiManager wifiManager;
     private Vibrator vibrator;
@@ -188,13 +188,9 @@ public class TrackerActivity extends AppCompatActivity {
             } else {
                 // Not connected, get from scan results
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
+
+                    Log.v(TAG,"Location service is disabled");
+                    finish();
                     return;
                 }
                 List<ScanResult> results = wifiManager.getScanResults();
@@ -223,7 +219,7 @@ public class TrackerActivity extends AppCompatActivity {
             }
 
             // Update UI
-            txtRssiValue.setText(String.valueOf(rssi));
+            txtDistance.setText(String.valueOf(rssi));
 
             // Calculate approximate distance (rough estimation)
             double distance = calculateDistance(rssi);
@@ -235,7 +231,7 @@ public class TrackerActivity extends AppCompatActivity {
             } else {
                 distanceText = String.format("~%.0f meters", distance);
             }
-            txtDistance.setText(distanceText);
+            txtRssiValue.setText(distanceText);
 
             // Signal quality
             String quality;

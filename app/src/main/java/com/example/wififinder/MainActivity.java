@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WiFiVibrationRadar";
     private static final int REQ_PERMISSIONS = 1001;
     private static final int REQ_BACKGROUND_LOCATION = 1002;
-    private static final long AUTO_REFRESH_INTERVAL_MS = 5000;
+    private static final long AUTO_REFRESH_INTERVAL_MS = 1000;
 
     private WifiManager wifiManager;
 
@@ -438,6 +438,7 @@ public class MainActivity extends AppCompatActivity {
                 txtStatus.setText(errorMsg);
                 txtEmptyState.setVisibility(View.VISIBLE);
                 listViewWifi.setVisibility(View.GONE);
+
                 return;
             }
 
@@ -503,25 +504,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.w(TAG, "SUSPICIOUS (very close): " + ssid + " | " + sr.BSSID + " | " + sr.level + " dBm");
                 }
 
-                String ssidLower = ssid.toLowerCase();
-                if (ssidLower.contains("android") ||
-                        ssidLower.contains("iphone") ||
-                        ssidLower.contains("hotspot") ||
-                        ssidLower.contains("mobile") ||
-                        ssidLower.contains("sm-") ||
-                        ssidLower.contains("pixel") ||
-                        ssidLower.contains("xiaomi") ||
-                        ssidLower.contains("huawei") ||
-                        ssidLower.contains("oneplus") ||
-                        ssidLower.contains("redmi") ||
-                        ssidLower.contains("oppo") ||
-                        ssidLower.contains("vivo") ||
-                        ssidLower.contains("realme") ||
-                        (ssid.equals("<hidden>") && sr.level > -60)) {
-                    isSuspicious = true;
-                    Log.w(TAG, "SUSPICIOUS (hotspot pattern): " + ssid + " | " + sr.BSSID + " | " + sr.level + " dBm");
-                }
-
                 if (isSuspicious) {
                     suspiciousNetworks.add(sr);
                 }
@@ -544,7 +526,7 @@ public class MainActivity extends AppCompatActivity {
 
             adapter.notifyDataSetChanged();
 
-            if (suspiciousNetworks.size() > 0) {
+            if (!suspiciousNetworks.isEmpty()) {
                 Log.w(TAG, "Found " + suspiciousNetworks.size() + " suspicious networks");
             }
 
